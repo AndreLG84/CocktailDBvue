@@ -24,9 +24,11 @@
       </div>
   </div>
 </div>
+<Users />
 </template>
 
 <script>
+import Users from "@/components/Users"
 import ApiService from "@/service/apiServices.js";
 
 const apiService = new ApiService();
@@ -34,6 +36,7 @@ const apiService = new ApiService();
 export default {
   name: "InfosCocktailView",
   components: {
+    Users,
   },
   data () {
     return {
