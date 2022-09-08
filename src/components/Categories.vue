@@ -41,9 +41,8 @@ export default {
   background-color:rgba(151, 23, 23, 0.4);
   color: white;
 }
-p {
+.listCat p {
   margin: 5px 0;
-  padding: 3px 5px;
   border-radius: 5px;
   line-height:30px;
   font-weight: 500;

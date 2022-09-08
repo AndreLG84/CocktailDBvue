@@ -54,4 +54,10 @@ h3 {
   padding: 5px 5px;
   font-weight: 500;
 }
+@media screen and (max-width: 530px) {
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+}
 </style>

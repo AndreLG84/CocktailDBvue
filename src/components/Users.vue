@@ -1,12 +1,22 @@
 <template>
-    <div class="commentaires">
+    <div class="rate">
         <h2>Laisser une note:</h2>
-        <input class="rate" type="radio" name="0" value="0"/>
-        <input class="rate" type="radio" name="1" value="1"/>
-        <input class="rate" type="radio" name="2" value="2"/>
-        <input class="rate" type="radio" name="3" value="3"/>
-        <input class="rate" type="radio" name="4" value="4"/>
-        <input class="rate" type="radio" name="5" value="5"/>
+        <label for="one">1</label>
+        <input type="radio" id="one" value="One" v-model="picked">
+        <br>
+        <label for="two">2</label>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <br>
+        <label for="tree">3</label>
+        <input type="radio" id="tree" value="Tree" v-model="picked">
+        <br>
+        <label for="four">4</label>
+        <input type="radio" id="four" value="Four" v-model="picked">
+        <br>
+        <label for="five">5</label>
+        <input type="radio" id="five" value="Five" v-model="picked">
+        <br>
+        <span>Picked: {{ picked }}</span>
     </div>
     <div class="well">
         <div class="form-group">
@@ -22,7 +32,6 @@
             <input type="text" class="form-control" placeholder="Email" v-model="User.email">
         </div>
         <button type="submit" class="btn btn-large btn-block btn-primary full-width">Submit</button>
-        <button class="btn btn-large btn-block btn-success full-width">Go user</button>
     </div>
 </template>
 
@@ -53,7 +62,7 @@ h2 {
     font-size: 1.4rem;
     margin: 0 1%;
 }
-.commentaires {
+.rate {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,5 +75,7 @@ h2 {
 }
 button {
     margin: 1%;
+    background-color: #971717;
+    border:1px solid white;
 }
 </style>

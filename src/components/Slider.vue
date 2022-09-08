@@ -53,7 +53,7 @@ export default {
 </script>
 <style scoped>
 .slider {
-  padding: 10px 5px;
+  margin: 30px auto;
 }
 h2 {
   color:rgba(0, 0, 0, 0.8);

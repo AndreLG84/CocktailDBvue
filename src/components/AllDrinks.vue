@@ -39,7 +39,7 @@ export default {
   align-items: center;
   background-color: rgb(255, 255, 255, 0.5);
 }
-p {
+.middle p {
   text-align: center;
   font-size: 1rem;
   color: black;

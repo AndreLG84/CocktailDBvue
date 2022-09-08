@@ -69,7 +69,8 @@ p {
   text-align: center;
   margin: 0 auto;
   color: white;
-  font-size: 1.6vw;
+  font-size: 1.3rem;
+  padding: 5px;
 }
 .slice1 {
   padding: 10px 5px;
@@ -81,7 +82,7 @@ p {
 h2 {
   color:rgba(0, 0, 0, 0.8);
   margin: 10px 5px;
-  font-size: 1.8vw;
+  font-size: 1.8rem;
   font-weight: 500;
   text-shadow: 1px 2px 3px white;
   display: inline-flex;

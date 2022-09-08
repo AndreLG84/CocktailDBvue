@@ -51,7 +51,7 @@ export default {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
 }
-p {
+.listIngredients p {
   font-size: 1rem;
   font-weight: 500;
   color: white;

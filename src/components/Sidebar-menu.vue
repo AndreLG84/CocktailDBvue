@@ -7,13 +7,15 @@
       <i class="bx" :class="isOpened ? 'bx-menu-alt-right' : 'bx-menu'" id="btn" @click="isOpened = !isOpened" />
     </div>
     <div style="display: flex ; flex-direction:column; justify-content: space-between; flex-grow: 1; max-height: calc(100% - 60px); ">
-      <div id="my-scroll" style="margin: 6px 14px 0 14px;" >
+      <div id="my-scroll" style="margin: 6px 10px 0 10px;" >
         <ul class="nav-list" style="overflow: visible;" >
           <span v-for="(menuItem, index) in menuItems" :key="index">
             <li>
               <a :href="menuItem.link">
                 <i class="bx" :class="menuItem.icon || 'bx-square-rounded'"/>
-                <span class="links_name">{{ menuItem.name }}</span>
+                <span class="links_name">
+                  {{ menuItem.name }}
+                </span>
               </a>
               <span class="tooltip">{{ menuItem.tooltip || menuItem.name }}</span>
             </li>
@@ -51,11 +53,11 @@ export default {
     },
       menuOpenedPaddingLeftBody: {
       type: String,
-      default: '250px'
+      default: '200px'
     },
     menuClosedPaddingLeftBody: {
       type: String,
-      default: '78px'
+      default: '70px'
     },
     //! Menu items
     menuItems: {
@@ -68,13 +70,13 @@ export default {
           icon: 'bxs-home',
         },
         {
-          link: "/CocktailsAndDrinks",
+          link: "CocktailsAndDrinks",
           name: 'Cocktails',
           tooltip: 'Search',
           icon: 'bx-search-alt-2',
         },
         {
-          link: "/Ingredients",
+          link: "Ingredients",
           name: "Ingredients",
           tooltip: 'Ingredients',
           icon: 'bx-drink',
@@ -161,13 +163,12 @@ export default {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body {
-  transition: all 0.6s ease;
-}
+/*
 .menu-logo {
   width: 30px;
   margin: 0 10px 0 10px;
 }
+*/
 .sidebar {
   position: relative;
   display: flex;
@@ -178,14 +179,14 @@ body {
   height: 100%;
   min-height: min-content;
 /* overflow-y: auto; */
-  width: 78px;
-  background: var(--bg-color);
+  width: 70px;
+/* background: var(--bg-color);*/
 /* padding: 6px 14px 0 14px; */
   z-index: 99;
   transition: all 0.5s ease;
 }
 .sidebar.open {
-  width: 250px;
+  width: 200px;
 }
 .sidebar .logo-details {
   height: 60px;

@@ -25,7 +25,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .selection {
-  margin: 0 auto;
+  margin: 30px auto;
   list-style-type: none;
   width: 80%;
   height: auto;
@@ -98,4 +98,20 @@ a.linkMore:hover {
   background-color:rgba(151, 23, 23, 0.69);
   color: white;
 } 
+@media screen and (max-width: 600px) {
+  .random {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+  .random > .image {
+    width: 95%;
+    height: 45%;
+  }
+  .content {
+    width: 95%;
+    padding: 5px;
+  }
+}
 </style>

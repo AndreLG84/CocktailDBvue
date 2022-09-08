@@ -61,13 +61,15 @@ nav .logo {
 .menu a {
   padding: 1%;
   font-weight: 500;
-  color: #2c3e50;
-  font-size: 1.4vw;
+  color: #971717;
+  font-size: 1.6rem;
+  opacity: 0.9;
   text-decoration: none;
   display: flex;
   align-items: center;
   border-radius: 5px;
   font-family: Verdana;
+  text-shadow: 1px 1px 2px gray;
 }
 .menu {
   width: 800px;
@@ -77,9 +79,9 @@ nav .logo {
   align-items: center;
 }
 .menu a:hover {
-  background-color: rgba(151, 23, 23, 0.6);
   border-radius: 5px;
   color: white;
+  text-shadow: 1px 1px 2px red;
 }
 .icon {
   width: 25px;
@@ -121,6 +123,9 @@ footer span {
   .menu {
     margin-bottom: 1%;
   }
+  .menu a {
+    font-size: 1.8rem;
+  }
 }
 @media screen and (max-width: 850px) {
   .mediasocial {
@@ -129,7 +134,7 @@ footer span {
     height:auto;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 541px) {
   .menu {
     display: none;
   }

@@ -82,7 +82,7 @@ button a {
 }
 .infos {
   width: 70%;
-  height: 500px;
+  height: 400px;
   padding: 1%;
   display: flex;
   justify-content: space-around;
@@ -135,10 +135,34 @@ p {
   width: 50%;
   height: 50px;
 }
-@media screen and (max-width: 1100px) { 
+@media screen and (max-width: 737px) {
   .infos {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+  }
+  .ingredients {
+    margin: 10px 0;
+    width: 95%;
+  }
+
+}
+@media screen and (max-width: 524px) {
+  h2 {
+    font-size: 1.6rem;
+  } 
+  .infos {
+    display: flex;
+    flex-direction: column;
+  }
+  .ingredients {
+    width: 95%;
+    margin: 3px 0;
+  }
+}
+@media screen and (max-width: 400px){
+  h2 {
+    font-size: 1.6rem;
   }
 }
 </style>
