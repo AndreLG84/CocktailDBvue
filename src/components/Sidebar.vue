@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'SidebarMenu',
+  name: 'Sidebar',
   props: {
     //! Menu settings
     isMenuOpen: {
@@ -70,7 +70,7 @@ export default {
           icon: 'bxs-home',
         },
         {
-          link: "CocktailsAndDrinks",
+          link: "/CocktailsAndDrinks",
           name: 'Cocktails',
           tooltip: 'Search',
           icon: 'bx-search-alt-2',

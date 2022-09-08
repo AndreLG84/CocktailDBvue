@@ -4,6 +4,7 @@ import IngredientView from "../views/IngredientView.vue";
 import AllDrinksView from "../views/AllDrinksView.vue";
 import InfosCocktailView from "../views/InfosCocktailView.vue";
 import Users from "../components/Users.vue";
+import Sidebar from "../components/Sidebar.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/Users",
     name: "Users",
     component: Users,
+  },
+  {
+    path: "/CocktailsAndDrinks",
+    name: "CocktailsAndDrinks",
+    component: Sidebar,
   },
 ];
 

@@ -1,15 +1,13 @@
 <template>
   <nav>
     <img class="logo" alt="/" src="./assets/logoeasycocktails.png" />
-    <div class="menu">
+    <button class="btn-burger" @click="toggle = !toggle"><i class='bx bx-menu'></i></button>
+    <div class="menu" v-show="toggle">
       <router-link to="/"><img class="icon" src="./assets/home-icons.png" />Home</router-link>
       <router-link to="/CocktailsAndDrinks"><img class="icon" src="./assets/search-icons.png" />Cocktails</router-link>
       <router-link to="/Ingredients"><img class="icon" src="./assets/glasse-icons.png" />Ingredients</router-link>
     </div>
   </nav>
-  <div class="sidebar">
-    <sidebar-menu />
-  </div>
   <router-view :key="$route.fullPath" />
   <footer>
     <p>“L’abus de l’alcool est dangereux pour la santé”</p>
@@ -25,16 +23,16 @@
 </template>
 
 <script>
-import SidebarMenu from "@/components/Sidebar-menu.vue";
+import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   name: "App",
   components: {
-    SidebarMenu,
   },
-  methods: {
-    search(val) {
-    }
+  data () {
+    return {
+      toggle: true,
+    };
   }
 }
 </script>
@@ -46,6 +44,9 @@ export default {
   font-family: Verdana;
   background: rgb(225,199,165);
   background: linear-gradient(125deg, rgba(123,197,193,1) 0%, rgba(225,199,165,1) 50%, rgba(123,197,193,1) 100%);
+}
+.btn-burger {
+  display: none;
 }
 nav {
   display: flex;
@@ -61,7 +62,7 @@ nav .logo {
 .menu a {
   padding: 1%;
   font-weight: 500;
-  color: #971717;
+  color: rgba(151, 23, 23, 0.7);
   font-size: 1.6rem;
   opacity: 0.9;
   text-decoration: none;
@@ -89,7 +90,7 @@ nav .logo {
 }
 footer {
   margin: 1% 0;
-  padding-top: 1%;
+  padding: 1% 0;
   min-height: 300px;
   height: auto;
   background-color: rgba(123,197,193,0.7);
@@ -98,7 +99,7 @@ footer {
   justify-content: space-between;
   text-align: center;
 }
-footer p {
+footer > p {
   font-size: 0.9rem;
 }
 .mediasocial {
@@ -134,9 +135,22 @@ footer span {
     height:auto;
   }
 }
-@media screen and (max-width: 541px) {
+@media screen and (max-width: 700px) {
   .menu {
-    display: none;
+    background-color: #ccc;
+    visibility: none;
+    justify-content: space-evenly;
+  }
+  .btn-burger {
+    margin: 1%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:rgba(151, 23, 23, 0.6);
+    transition: 0.4s;
   }
 }
 </style>

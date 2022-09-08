@@ -65,6 +65,7 @@ h2 {
 .carousel {
   margin: 20px auto;
   width: 90%;
+  background-color:rgba(151, 23, 23, 0.4);
 }
 .image {
   width: 350px;

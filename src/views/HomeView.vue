@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <p>
+    <p class="intro">
       EasyCocktails.com<br/> vous accompagne pour réussir tout vos cocktails,impressionnez vos amis avec nos recettes inratables<br/>Partagez
       vos recettes, vos idées et vos photos!
     </p>
