@@ -1,12 +1,12 @@
 <template>
-<h2>Réalisez votre cocktail</h2>
-<div class="details">
-  <div class="CocktailTitle">
-    <h3>{{ data.strDrink }}</h3>
-    <p>({{ data.strAlcoholic }})</p>
-  </div>
-  <div class="infos">
-    <img :src="data.strDrinkThumb" class="image" />
+  <h2>Réalisez votre cocktail</h2>
+  <div class="details">
+    <div class="CocktailTitle">
+      <h3>{{ data.strDrink }}</h3>
+      <p>{{ data.strAlcoholic }}</p>
+    </div>
+    <div class="infos">
+      <img :src="data.strDrinkThumb" class="image" />
       <div class="ingredients">
         <div class="list_ingredient">
           <h4>Categories</h4>
@@ -22,13 +22,13 @@
         <p>{{ data.strInstructions }}</p>
         <button><router-link to="/">Retour</router-link></button>
       </div>
+    </div>
   </div>
-</div>
-<Users />
+  <Users />
 </template>
 
 <script>
-import Users from "@/components/Users"
+import Users from "@/components/Users";
 import ApiService from "@/service/apiServices.js";
 
 const apiService = new ApiService();
@@ -38,29 +38,30 @@ export default {
   components: {
     Users,
   },
-  data () {
+  data() {
     return {
       data: null,
-      id: this.$route.params.id
+      id: this.$route.params.id,
     };
   },
-  created () {
-    this.Drinks(this.id)
+  created() {
+    this.Drinks(this.id);
   },
   methods: {
-    async Drinks (id) {
-      const res = await apiService.getInfos(id)
-      const infos = await res.json()
-      this.data = infos.drinks[0]
-      console.log(infos.drinks)
-    }
-  }
+    async Drinks(id) {
+      const res = await apiService.getInfos(id);
+      const infos = await res.json();
+      this.data = infos.drinks[0];
+      console.log(infos.drinks);
+    },
+  },
 };
 </script>
 
 <style scoped>
 .details {
-  width: 70%;
+  width: 80%;
+  height: auto;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -81,15 +82,21 @@ button a {
   align-items: center;
 }
 .infos {
-  width: 70%;
-  height: 400px;
+  width: 75%;
+  min-height: 450px;
+  height: auto;
   padding: 1%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background: rgb(211,227,226);
-  background: linear-gradient(27deg, rgba(211,227,226,1) 0%, rgba(225,199,165,1) 50%, rgba(211,227,226,1) 100%);
+  background: rgb(211, 227, 226);
+  background: linear-gradient(
+    27deg,
+    rgba(211, 227, 226, 1) 0%,
+    rgba(225, 199, 165, 1) 50%,
+    rgba(211, 227, 226, 1) 100%
+  );
   width: 95%;
   border-radius: 5px;
   box-shadow: 1px 2px 1px 1px gray;
@@ -101,15 +108,15 @@ button a {
 .ingredients {
   width: 60%;
   height: 95%;
-  background-color:rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
 }
 h2 {
-  color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
   text-shadow: 1px 2px 2px white;
   font-size: 2.5rem;
-  font-weight:500;
-  margin: 10px 20px;
+  font-weight: 500;
+  margin: 20px 20px;
 }
 h3 {
   margin: 10px auto;
@@ -127,8 +134,9 @@ h4 {
   font-size: 1.5rem;
   font-weight: 600;
 }
-p {
+.ingredients > p {
   margin: 5px;
+  text-overflow: ellipsis;
 }
 .commentaires > .comments {
   margin: 10px auto;
@@ -145,12 +153,11 @@ p {
     margin: 10px 0;
     width: 95%;
   }
-
 }
 @media screen and (max-width: 524px) {
   h2 {
     font-size: 1.6rem;
-  } 
+  }
   .infos {
     display: flex;
     flex-direction: column;
@@ -160,7 +167,7 @@ p {
     margin: 3px 0;
   }
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 400px) {
   h2 {
     font-size: 1.6rem;
   }

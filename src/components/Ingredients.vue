@@ -1,8 +1,16 @@
 <template>
   <div class="Ingredients" v-for="item in data">
-    <img :src="'https://www.thecocktaildb.com/images/ingredients/' + item.strIngredient1 +'-Medium.png'" class="img" alt="image de l'ingredient">
+    <img
+      :src="
+        'https://www.thecocktaildb.com/images/ingredients/' +
+        item.strIngredient1 +
+        '-Medium.png'
+      "
+      class="img"
+      alt="image de l'ingredient"
+    />
     <li class="listIngredients">
-        <p>{{ item.strIngredient1 }}</p>
+      <p>{{ item.strIngredient1 }}</p>
     </li>
   </div>
 </template>
@@ -19,16 +27,16 @@ export default {
     };
   },
   mounted() {
-    this.Ingredients()
+    this.Ingredients();
   },
   methods: {
-    async Ingredients () {
-      const res = await apiService.getListIngredients()
-      const ingredients = await res.json()
-      this.data = ingredients.drinks
-      console.log(ingredients.drinks)
-    }
-  }
+    async Ingredients() {
+      const res = await apiService.getListIngredients();
+      const ingredients = await res.json();
+      this.data = ingredients.drinks;
+      console.log(ingredients.drinks);
+    },
+  },
 };
 </script>
 
@@ -45,13 +53,13 @@ export default {
   position: absolute;
   width: 100%;
   height: 20%;
-  top: 50%;
+  top: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
 }
-.listIngredients p {
+.listIngredients > p {
   font-size: 1rem;
   font-weight: 500;
   color: white;

@@ -2,13 +2,16 @@
   <li class="selection">
     <h2>Notre selection</h2>
     <div class="random">
-      <img :src="img" alt="image" class="image"/>
+      <img :src="img" alt="image" class="image" />
       <div class="content">
         <h3>{{ name }}</h3>
         <p>{{ MeasureA }}&nbsp;{{ IngredientA }}</p>
         <p>{{ MeasureB }}&nbsp;{{ IngredientB }}</p>
         <p>{{ MeasureB }}&nbsp;{{ IngredientC }}</p>
-        <router-link :to ="{name: 'Details', params: {id:id}}" class="linkMore">More Infos
+        <router-link
+          :to="{ name: 'Details', params: { id: id } }"
+          class="linkMore"
+          >More Infos
         </router-link>
       </div>
     </div>
@@ -18,7 +21,17 @@
 <script>
 export default {
   name: "RandomCocktails",
-  props: ['id', 'name', 'img', 'MeasureA','MeasureB', 'MeasureC', 'IngredientA', 'IngredientB', 'IngredientC'],
+  props: [
+    "id",
+    "name",
+    "img",
+    "MeasureA",
+    "MeasureB",
+    "MeasureC",
+    "IngredientA",
+    "IngredientB",
+    "IngredientC",
+  ],
 };
 </script>
 
@@ -27,7 +40,7 @@ export default {
 .selection {
   margin: 30px auto;
   list-style-type: none;
-  width: 80%;
+  width: 75%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -45,8 +58,13 @@ export default {
   align-items: center;
   width: 85%;
   height: 350px;
-  background: rgb(211,227,226);
-  background: linear-gradient(27deg, rgba(211,227,226,1) 0%, rgba(225,199,165,1) 50%, rgba(211,227,226,1) 100%);
+  background: rgb(211, 227, 226);
+  background: linear-gradient(
+    27deg,
+    rgba(211, 227, 226, 1) 0%,
+    rgba(225, 199, 165, 1) 50%,
+    rgba(211, 227, 226, 1) 100%
+  );
   border-radius: 5px;
   box-shadow: 1px 2px 2px 2px gray;
 }
@@ -73,7 +91,7 @@ h3 {
   line-height: 30px;
 }
 h2 {
-  color:rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin: 10px 5px;
   font-size: 2rem;
   font-weight: 500;
@@ -92,12 +110,12 @@ a.linkMore {
   color: rgba(151, 23, 23, 0.69);
   border-radius: 3px;
   border: 1px solid rgba(151, 23, 23, 0.8);
-  background-color: #D3E3E2;
+  background-color: #d3e3e2;
 }
 a.linkMore:hover {
-  background-color:rgba(151, 23, 23, 0.69);
+  background-color: rgba(151, 23, 23, 0.69);
   color: white;
-} 
+}
 @media screen and (max-width: 600px) {
   .random {
     display: flex;

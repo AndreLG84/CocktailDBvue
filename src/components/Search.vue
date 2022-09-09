@@ -2,11 +2,17 @@
   <div class="SearchInput">
     <h2>Recherchez votre cocktail</h2>
     <p>Entrez la premiere lettre</p>
-    <input v-model="search" type="text" placeholder="Search..." class="text" @input="search = $event.target.value" />
+    <input
+      v-model="search"
+      type="text"
+      placeholder="Search..."
+      class="text"
+      @input="search = $event.target.value"
+    />
     <div class="SearchResult">
       <div class="result" v-for="item in result" :key="item.idDrink">
         <div class="item">
-          <img :src="item.strDrinkThumb" class="image">
+          <img :src="item.strDrinkThumb" class="image" />
           <div class="middle">
             <h4>{{ item.strDrink }}</h4>
           </div>
@@ -17,41 +23,41 @@
 </template>
 
 <script>
-import ApiService from '@/service/apiServices.js'
+import ApiService from "@/service/apiServices.js";
 
-const apiService = new ApiService()
+const apiService = new ApiService();
 
 export default {
-  name: 'Search',
-  components: {
-  },
-  data () {
+  name: "Search",
+  components: {},
+  data() {
     return {
       result: null,
-      search: ''
-    }
+      search: "",
+    };
   },
-  update () {
-    this.searchDrinks(this.search)
+  update() {
+    this.searchDrinks(this.search);
   },
   watch: {
-    search () {
-      this.searchDrinks(this.search)
-    }
+    search() {
+      this.searchDrinks(this.search);
+    },
   },
   methods: {
-    async searchDrinks (search) {
-      const res = await apiService.getSearchCocktail(search)
-      const drinks = await res.json()
-      this.result = drinks.drinks
-    }
-  }
-}
+    async searchDrinks(search) {
+      const res = await apiService.getSearchCocktail(search);
+      const drinks = await res.json();
+      this.result = drinks.drinks;
+    },
+  },
+};
 </script>
 
 <style scoped>
 .SearchInput {
   text-align: center;
+  margin-top: 40px;
 }
 .SearchResult {
   display: flex;
@@ -86,7 +92,7 @@ export default {
   background-color: rgb(255, 255, 255, 0.5);
 }
 h2 {
-  color:rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin: 10px 5px;
   font-size: 2rem;
   font-weight: 500;

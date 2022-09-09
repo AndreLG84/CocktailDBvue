@@ -1,15 +1,35 @@
 <template>
   <div class="home">
     <p class="intro">
-      EasyCocktails.com<br/> vous accompagne pour réussir tout vos cocktails,impressionnez vos amis avec nos recettes inratables<br/>Partagez
-      vos recettes, vos idées et vos photos!
+      EasyCocktails.com<br />
+      vous accompagne pour réussir tout vos cocktails,impressionnez vos amis
+      avec nos recettes inratables<br />Partagez vos recettes, vos idées et vos
+      photos!
     </p>
   </div>
   <div class="slice1">
-    <h2>Partagez vos plus belles photos&nbsp;<i class='bx bxs-camera'></i></h2>
-    <ThumbHome v-for="item in data1" :key="item.idDrink" :id="item.idDrink" :name="item.strDrink" :img="item.strDrinkThumb"></ThumbHome>
+    <h2>Partagez vos plus belles photos&nbsp;<i class="bx bxs-camera"></i></h2>
+    <ThumbHome
+      v-for="item in data1"
+      :key="item.idDrink"
+      :id="item.idDrink"
+      :name="item.strDrink"
+      :img="item.strDrinkThumb"
+    ></ThumbHome>
   </div>
-  <RandomCocktails v-for="item in dataR" :key="item.idDrink" :id="item.idDrink" :name="item.strDrink" :img="item.strDrinkThumb" :MeasureA="item.strMeasure1" :MeasureB="item.strMeasure2" :MeasureC="item.strMeasure3" :IngredientA="item.strIngredient1" :IngredientB="item.strIngredient2" :IngredientC="item.strIngredient3" />
+  <RandomCocktails
+    v-for="item in dataR"
+    :key="item.idDrink"
+    :id="item.idDrink"
+    :name="item.strDrink"
+    :img="item.strDrinkThumb"
+    :MeasureA="item.strMeasure1"
+    :MeasureB="item.strMeasure2"
+    :MeasureC="item.strMeasure3"
+    :IngredientA="item.strIngredient1"
+    :IngredientB="item.strIngredient2"
+    :IngredientC="item.strIngredient3"
+  />
   <Slider></Slider>
 </template>
 
@@ -33,24 +53,23 @@ export default {
     return {
       dataR: null,
       data1: null,
-    }
+    };
   },
   mounted() {
-    this.Cocktails (),
-    this.Drinks ()
+    this.Cocktails(), this.Drinks();
   },
   methods: {
-    async Cocktails () {
-      const res = await apiService.getRandomCocktails()
-      const cocktails = await res.json()
-      this.dataR = cocktails.drinks
-      console.log(cocktails.drinks)
+    async Cocktails() {
+      const res = await apiService.getRandomCocktails();
+      const cocktails = await res.json();
+      this.dataR = cocktails.drinks;
+      console.log(cocktails.drinks);
     },
-    async Drinks () {
-      const res = await apiService.getCocktails()
-      const drinks = await res.json()
-      this.data1 = drinks.drinks.slice(0, 9)
-    }
+    async Drinks() {
+      const res = await apiService.getCocktails();
+      const drinks = await res.json();
+      this.data1 = drinks.drinks.slice(0, 9);
+    },
   },
 };
 </script>
@@ -61,7 +80,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 300px;
-  background-image:url('C:\Users\Stagiaire\Bureau\easycocktails\src\assets\background.png');
+  background-image: url("C:\Users\Stagiaire\Bureau\easycocktails\src\assets\background.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -80,7 +99,7 @@ p {
   flex-wrap: wrap;
 }
 h2 {
-  color:rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin: 10px 5px;
   font-size: 1.8rem;
   font-weight: 500;

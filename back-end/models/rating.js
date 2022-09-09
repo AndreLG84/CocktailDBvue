@@ -1,4 +1,5 @@
 const { Number } = require("core-js")
+const { String } = require("core-js")
 const mongoose = require("mongoose")
 const {Schema} = mongoose
 
@@ -9,6 +10,17 @@ let RatingSchema = new Schema({
     rate: {
         type: Number
     },
+    // User: {
+    //     first_name: {
+    //         type: String
+    //     },
+    //     last_name: {
+    //         type: String
+    //     },
+    //     email: {
+    //         type: String
+    //     },    
+    // },
 }, {
     collection: "rating"
 }, {

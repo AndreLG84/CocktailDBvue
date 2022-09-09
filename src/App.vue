@@ -1,21 +1,38 @@
 <template>
   <nav>
     <img class="logo" alt="/" src="./assets/logoeasycocktails.png" />
-    <button class="btn-burger" @click="toggle = !toggle"><i class='bx bx-menu'></i></button>
+    <button class="btn-burger" @click="toggle = !toggle">
+      <i class="bx bx-menu"></i>
+    </button>
     <div class="menu" v-show="toggle">
-      <router-link to="/"><img class="icon" src="./assets/home-icons.png" />Home</router-link>
-      <router-link to="/CocktailsAndDrinks"><img class="icon" src="./assets/search-icons.png" />Cocktails</router-link>
-      <router-link to="/Ingredients"><img class="icon" src="./assets/glasse-icons.png" />Ingredients</router-link>
+      <router-link to="/"
+        ><img class="icon" src="./assets/home-icons.png" />Home</router-link
+      >
+      <router-link to="/CocktailsAndDrinks"
+        ><img
+          class="icon"
+          src="./assets/search-icons.png"
+        />Cocktails</router-link
+      >
+      <router-link to="/Ingredients"
+        ><img
+          class="icon"
+          src="./assets/glasse-icons.png"
+        />Ingredients</router-link
+      >
     </div>
   </nav>
   <router-view :key="$route.fullPath" />
   <footer>
     <p>“L’abus de l’alcool est dangereux pour la santé”</p>
     <div class="mediasocial">
-      <p>Suivez nous sur les réseaux <br> et partagez vos plus beaux cocktails.</p>
-      <span><i class='bx bxl-facebook-circle'></i>EasyCocktail</span><br>
-      <span><i class='bx bxl-instagram' ></i>EasyCocktail</span><br>
-      <span><i class='bx bxl-twitter' ></i>EasyCocktail</span><br>
+      <p>
+        Suivez nous sur les réseaux <br />
+        et partagez vos plus beaux cocktails.
+      </p>
+      <span><i class="bx bxl-facebook-circle"></i>EasyCocktail</span><br />
+      <span><i class="bx bxl-instagram"></i>EasyCocktail</span><br />
+      <span><i class="bx bxl-twitter"></i>EasyCocktail</span><br />
       <img alt="logo" src="./assets/logoeasycocktails.png" />
     </div>
     <p>© 2022 EasyCocktail.com</p>
@@ -23,27 +40,29 @@
 </template>
 
 <script>
-import Sidebar from "@/components/Sidebar.vue";
-
 export default {
   name: "App",
-  components: {
-  },
-  data () {
+  components: {},
+  data() {
     return {
       toggle: true,
     };
-  }
-}
+  },
+};
 </script>
 
 <style>
-@import URL('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import URL("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 #app {
   font-family: Verdana;
-  background: rgb(225,199,165);
-  background: linear-gradient(125deg, rgba(123,197,193,1) 0%, rgba(225,199,165,1) 50%, rgba(123,197,193,1) 100%);
+  background: rgb(225, 199, 165);
+  background: linear-gradient(
+    125deg,
+    rgba(123, 197, 193, 1) 0%,
+    rgba(225, 199, 165, 1) 50%,
+    rgba(123, 197, 193, 1) 100%
+  );
 }
 .btn-burger {
   display: none;
@@ -53,7 +72,12 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  background: linear-gradient(27deg, rgba(234,184,117,1) 0%, rgba(123,197,193,1) 50%, rgba(234,184,117,1) 100%);
+  background: linear-gradient(
+    27deg,
+    rgba(234, 184, 117, 1) 0%,
+    rgba(123, 197, 193, 1) 50%,
+    rgba(234, 184, 117, 1) 100%
+  );
 }
 nav .logo {
   width: 140px;
@@ -74,7 +98,7 @@ nav .logo {
 }
 .menu {
   width: 800px;
-  height:auto;
+  height: auto;
   display: inline-flex;
   justify-content: space-evenly;
   align-items: center;
@@ -93,7 +117,7 @@ footer {
   padding: 1% 0;
   min-height: 300px;
   height: auto;
-  background-color: rgba(123,197,193,0.7);
+  background-color: rgba(123, 197, 193, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -101,6 +125,7 @@ footer {
 }
 footer > p {
   font-size: 0.9rem;
+  margin: 5px 0;
 }
 .mediasocial {
   margin: 1% 0;
@@ -109,7 +134,7 @@ footer > p {
   align-items: center;
 }
 footer span {
-  display:inline-flex;
+  display: inline-flex;
   align-items: center;
 }
 .router-link-active {
@@ -121,9 +146,6 @@ footer span {
   nav {
     height: auto;
   }
-  .menu {
-    margin-bottom: 1%;
-  }
   .menu a {
     font-size: 1.8rem;
   }
@@ -131,15 +153,19 @@ footer span {
 @media screen and (max-width: 850px) {
   .mediasocial {
     display: flex;
-    flex-direction:column;
-    height:auto;
+    flex-direction: column;
+    height: auto;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
   .menu {
     background-color: #ccc;
     visibility: none;
     justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .menu a {
+    font-size: 1.5rem;
   }
   .btn-burger {
     margin: 1%;
@@ -149,18 +175,10 @@ footer span {
     border: none;
     border-radius: 5px;
     color: white;
-    background-color:rgba(151, 23, 23, 0.6);
+    background-color: rgba(151, 23, 23, 0.6);
     transition: 0.4s;
   }
 }
 @media screen and (max-width: 500px) {
-  .menu {
-    flex-direction: column;
-    display: flex;
-    justify-content: start;
-  }
-  .menu a {
-    font-size: 1.5rem;
-  }
 }
 </style>

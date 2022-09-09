@@ -30,7 +30,7 @@ export default {
   margin: 1% 1%;
 }
 h2 {
-  color:rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin: 10px 5px;
   font-size: 2rem;
   font-weight: 500;

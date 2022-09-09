@@ -1,5 +1,7 @@
 <template>
-  <button @click="toggle = !toggle" class="accordion">Voir les categories&nbsp;<i class='bx bx-expand-alt' ></i></button>
+  <button @click="toggle = !toggle" class="accordion">
+    Voir les categories&nbsp;<i class="bx bx-expand-alt"></i>
+  </button>
   <div v-show="toggle" class="panel">
     <li class="listCat" v-for="itemC in datalist">
       <p>{{ itemC.strCategory }}</p>
@@ -14,22 +16,22 @@ const apiService = new ApiService();
 
 export default {
   name: "Categories",
-  data () {
+  data() {
     return {
       datalist: null,
       toggle: false,
     };
   },
-  mounted () {
-    this.Categories ()
+  mounted() {
+    this.Categories();
   },
   methods: {
-    async Categories () {
-      const res = await apiService.getCategories()
-      const list = await res.json()
-      this.datalist = list.drinks
-    }
-  }
+    async Categories() {
+      const res = await apiService.getCategories();
+      const list = await res.json();
+      this.datalist = list.drinks;
+    },
+  },
 };
 </script>
 <style scoped>
@@ -38,15 +40,15 @@ export default {
   cursor: pointer;
 }
 .listCat:hover p {
-  background-color:rgba(151, 23, 23, 0.4);
+  background-color: rgba(151, 23, 23, 0.4);
   color: white;
 }
 .listCat p {
   margin: 5px 0;
   border-radius: 5px;
-  line-height:30px;
+  line-height: 30px;
   font-weight: 500;
-  color:rgba(151, 23, 23, 0.71);
+  color: rgba(151, 23, 23, 0.71);
 }
 .accordion {
   background-color: rgba(151, 23, 23, 0.4);
@@ -64,7 +66,7 @@ export default {
 }
 .accordion:hover {
   background-color: #ccc;
-  color: rgba(151, 23, 23, 0.91); 
+  color: rgba(151, 23, 23, 0.91);
 }
 .panel {
   display: flex;
