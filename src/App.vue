@@ -70,7 +70,7 @@ nav .logo {
   align-items: center;
   border-radius: 5px;
   font-family: Verdana;
-  text-shadow: 1px 1px 2px gray;
+  text-shadow: 1px 1px 1px gray;
 }
 .menu {
   width: 800px;
@@ -151,6 +151,16 @@ footer span {
     color: white;
     background-color:rgba(151, 23, 23, 0.6);
     transition: 0.4s;
+  }
+}
+@media screen and (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+  }
+  .menu a {
+    font-size: 1.5rem;
   }
 }
 </style>
